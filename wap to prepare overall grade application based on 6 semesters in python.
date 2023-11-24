@@ -1,0 +1,59 @@
+def cgpa():
+    e1=int(s1marks.get())
+    e2=int(s2marks.get())
+    e3=int(s3marks.get())
+    e4=int(s4marks.get())
+    e5=int(s5marks.get())
+    e6=int(s6marks.get())
+    total=e1+e2+e3+e4+e5+e6
+    avg=round((total/6),2)
+    if avg==0:
+        gr="O"
+    elif avg>=9:
+        gr="A+"
+    elif avg>=8:
+        gr="A"
+    elif avg>=7:
+        gr="B"
+    elif avg>=6:
+        gr="C"
+    elif avg>=5:
+        gr="D"
+    elif avg>=4:
+        gr="P"
+    else:
+        gr="F"
+    s="cgpa="+str(avg)+" Grade:"+gr
+    res.config(text=s)
+from tkinter import *
+result=Tk()
+result.title("Student Result")
+s1=Label(result,text="Enter Sem1 Marks:")
+s1marks=Entry(result)
+s2=Label(result,text="Enter Sem2 Marks:")
+s2marks=Entry(result)
+s3=Label(result,text="Enter Sem3 Marks:")
+s3marks=Entry(result)
+s4=Label(result,text="Enter Sem4 Marks:")
+s4marks=Entry(result)
+s5=Label(result,text="Enter Sem5 Marks:")
+s5marks=Entry(result)
+s6=Label(result,text="Enter Sem6 Marks:")
+s6marks=Entry(result)
+b1=Button(result,text="Submit",command=cgpa)
+res=Label(result,text="?")
+s1.grid(row=0,column=0)
+s1marks.grid(row=0,column=1)
+s2.grid(row=1,column=0)
+s2marks.grid(row=1,column=1)
+s3.grid(row=2,column=0)
+s3marks.grid(row=2,column=1)
+s4.grid(row=3,column=0)
+s4marks.grid(row=3,column=1)
+s5.grid(row=4,column=0)
+s5marks.grid(row=4,column=1)
+s6.grid(row=5,column=0)
+s6marks.grid(row=5,column=1)
+b1.grid(row=6,column=0)
+res.grid(row=6,column=1)
+result.mainloop()
